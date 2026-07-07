@@ -8,7 +8,9 @@ class Phonebook {
     private:
         Contact contacts[8];
     public:
-        void afasfas();
+
 };
+
+bool is_number_valid(std::string phone_number);
 
 #endif
