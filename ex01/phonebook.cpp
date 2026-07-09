@@ -1,7 +1,7 @@
 #include "phonebook.hpp"
 
-void add(){}
+void Phonebook::add(){}
 
-void search(){}
+void Phonebook::search(){}
 
-void exit(){}
+void Phonebook::exit(){}
