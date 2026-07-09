@@ -9,9 +9,9 @@ bool    valid_numbers(std::string number)
         if (std::isdigit(static_cast<unsigned char>(number[i])))
             continue;
         else
-            return (false);
+            return (true);
     }
-    return (true);
+    return (false);
 }
 
 bool    valid_string(std::string str)
@@ -23,9 +23,9 @@ bool    valid_string(std::string str)
         if (std::isalpha(static_cast<unsigned char>(str[i])))
             continue;
         else
-            return (false);
+            return (true);
     }
-    return (true);
+    return (false);
 }
 
 void invalid_command()
