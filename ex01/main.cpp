@@ -7,16 +7,22 @@ int main(int args, char **argv)
 
     while (1)
     {
-        std::cout << std::endl << "Commands available: ADD, SEARCH or EXIT\n" << std::endl;
+        std::cout << std::endl << "Commands: ADD, SEARCH or EXIT\n" << std::endl;
         std::cout << "Enter a command: ";
         
         std::getline(std::cin, command);
         if ((!command.compare("EXIT"))|| std::cin.eof())
             return 0;
         else if (!command.compare("ADD"))
-            phonebook.add();
+        {
+            if (!phonebook.add())
+                return 0;
+        }
         else if (!command.compare("SEARCH"))
-            phonebook.search();
+        {
+            if (!phonebook.search())
+                return 0;
+        }
         else
             invalid_command();
     }

@@ -1,7 +1,15 @@
 #include "phonebook.hpp"
 
-void Phonebook::add(){}
+bool Phonebook::add(){
+    Contact fake;
 
-void Phonebook::search(){}
+    std::string answer;
 
-void Phonebook::exit(){}
+    std::cout << "Enter first name: " << std::endl;
+
+    if (!std::getline(std::cin, answer) || !std::cin.eof())
+        return false;
+    
+}
+
+bool Phonebook::search(){}

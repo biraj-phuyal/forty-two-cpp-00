@@ -9,9 +9,8 @@ class Phonebook {
         Contact contacts[8];
         int index = 0;
     public:
-        void add();
-        void search();
-        void exit();
+        bool add();
+        bool search();
 };
 
 bool is_number_valid(std::string phone_number);
