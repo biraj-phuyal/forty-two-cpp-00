@@ -16,7 +16,6 @@ class Contact {
         std::string append_nickname(std::string first_name, bool get);
         std::string append_phone_number(std::string first_name, bool get);
         std::string append_darkest_secret(std::string darkest_secret, bool get);
-
 };
 
 

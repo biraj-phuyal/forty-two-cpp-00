@@ -14,3 +14,8 @@ bool    is_number_valid(std::string phone_number)
     return (true);
 }
 
+void invalid_command()
+{
+    std::cout << "That's the wrong NUMBERRRRR (WOAHHHHHH) | Enter to continue...";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}

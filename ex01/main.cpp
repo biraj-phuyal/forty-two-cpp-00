@@ -11,8 +11,13 @@ int main(int args, char **argv)
         std::cout << "Enter a command: ";
         
         std::getline(std::cin, command);
-        if ((command.compare("EXIT") == 1) || std::cin.eof())
+        if ((!command.compare("EXIT"))|| std::cin.eof())
             return 0;
-        
+        else if (!command.compare("ADD"))
+            phonebook.add();
+        else if (!command.compare("SEARCH"))
+            phonebook.search();
+        else
+            invalid_command();
     }
 }
