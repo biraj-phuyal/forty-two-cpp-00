@@ -7,7 +7,7 @@ int main()
 
     while (1)
     {
-        std::cout << std::endl << "Commands: ADD, SEARCH or EXIT\n" << std::endl;
+        std::cout << std::endl << "Commands that works: ADD, SEARCH or EXIT\n" << std::endl;
         std::cout << "Enter a command: ";
         
         std::getline(std::cin, command);
