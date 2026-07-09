@@ -9,7 +9,7 @@ bool Phonebook::add(){
 
     if (!std::getline(std::cin, answer) || !std::cin.eof())
         return false;
-    
+    return (true);
 }
 
-bool Phonebook::search(){}
+// bool Phonebook::search(){}

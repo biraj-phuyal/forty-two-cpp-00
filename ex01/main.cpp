@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-int main(int args, char **argv)
+int main()
 {
     Phonebook phonebook;
     std::string command;
@@ -20,8 +20,8 @@ int main(int args, char **argv)
         }
         else if (!command.compare("SEARCH"))
         {
-            if (!phonebook.search())
-                return 0;
+            // if (!phonebook.search())
+            //     return 0;
         }
         else
             invalid_command();
