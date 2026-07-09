@@ -7,13 +7,15 @@
 class Phonebook {
     private:
         Contact contacts[8];
-        // int index = 0;
+        int count;
     public:
+        Phonebook();
         bool add();
         // bool search();
 };
 
-bool is_number_valid(std::string phone_number);
+bool valid_numbers(std::string phone_number);
+bool valid_string(std::string str);
 void invalid_command();
 
 #endif
