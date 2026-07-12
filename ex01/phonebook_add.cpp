@@ -1,14 +1,12 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() {
-    count = 0;
-}
+Phonebook::Phonebook() : count(0), exist(false) {}
 
 bool Phonebook::add(){
     Contact fake;
     std::string answer;
 
-    // <-------------------- First name ----------------------------->
+    // <-------------------- First name -------------------------->
     while (true)
     {
         std::cout << "Enter first name: " << std::endl;
@@ -20,7 +18,7 @@ bool Phonebook::add(){
     }
     fake.append_first_name(answer, false);
 
-    // <-------------------- Last name ----------------------------->
+    // <-------------------- Last name ---------------------------->
     while (true)
     {
         std::cout << "Enter last name: " << std::endl;
@@ -44,7 +42,7 @@ bool Phonebook::add(){
     }
     fake.append_nickname(answer, false);
 
-    // <-------------------- Phone number ----------------------------->
+    // <-------------------- Phone number -------------------------->
     while (true)
     {
         std::cout << "Enter phone number: " << std::endl;
@@ -56,7 +54,7 @@ bool Phonebook::add(){
     }
     fake.append_phone_number(answer, false);
 
-    // <-------------------- Darkest secret ----------------------------->
+    // <-------------------- Darkest secret ------------------------>
     while (true)
     {
         std::cout << "Enter darkest secret: " << std::endl;
@@ -79,6 +77,7 @@ bool Phonebook::add(){
     }
 
     std::cout << "\nContact was added to the registry" << std::endl;
+    exist = true;
     fake.print_contact();
     return true;
 }

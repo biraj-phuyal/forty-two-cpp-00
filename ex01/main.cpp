@@ -20,8 +20,8 @@ int main()
         }
         else if (!command.compare("SEARCH"))
         {
-            // if (!phonebook.search())
-            //     return 0;
+            if (!phonebook.search())
+                return 0;
         }
         else
             invalid_command();

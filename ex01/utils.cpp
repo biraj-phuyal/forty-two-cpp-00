@@ -28,6 +28,25 @@ bool    valid_string(std::string str)
     return (false);
 }
 
+void    print_for_search(std::string value)
+{
+    if (value.length() <= 10)
+    {
+        std::cout.width(10);
+        std::cout << value << "|";
+    }
+    else
+    {
+        std::setw(10);
+        int i;
+        for (i = 0; i < 9; i++)
+        {
+            std::cout << value[i];
+        }
+        std::cout << ".|";
+    }
+}
+
 void invalid_command()
 {
     std::cout << "\nThat's the wrong NUMBERRRRR 🙀🙀🙀🙀🙀🙀🙀🙀\n\nEnter to continue...";
