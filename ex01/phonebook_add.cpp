@@ -79,7 +79,6 @@ bool Phonebook::add(){
     }
 
     std::cout << "\nContact was added to the registry" << std::endl;
+    fake.print_contact();
     return true;
 }
-
-// bool Phonebook::search(){}

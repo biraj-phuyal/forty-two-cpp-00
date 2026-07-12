@@ -11,7 +11,7 @@ class Phonebook {
     public:
         Phonebook();
         bool add();
-        // bool search();
+        bool search();
 };
 
 bool valid_numbers(std::string phone_number);
