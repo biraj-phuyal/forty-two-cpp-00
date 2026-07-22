@@ -29,7 +29,7 @@ bool Phonebook::search(){
             std::cout << "No contacts to show: write 'exit' and add some contacts: " << std::endl;
             if (!std::getline(std::cin, index))
                 break;
-            if (index.compare("EXIT"))
+            if (index.compare("exit"))
                 return false;
         }
         break;
