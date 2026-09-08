@@ -20,7 +20,7 @@ int main()
         }
         else if (!command.compare("SEARCH"))
         {
-            if (!phonebook.search())
+            if (phonebook.search() == 0)
                 return 0;
         }
         else

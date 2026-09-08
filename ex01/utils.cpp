@@ -49,6 +49,6 @@ void    print_for_search(std::string value)
 
 void invalid_command()
 {
-    std::cout << "\nThat's the wrong NUMBERRRRR 🙀🙀🙀🙀🙀🙀🙀🙀\n\nEnter to continue...";
+    std::cout << "\nThat's a wrong command \n\nEnter to continue...";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

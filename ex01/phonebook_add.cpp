@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() : count(0), exist(false) {}
+Phonebook::Phonebook() : count(0) {}
 
 bool Phonebook::add(){
     Contact fake;
@@ -14,7 +14,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty() && !valid_string(answer))
             break;
-        std::cout << "Can only be letters BROOOOOO" << std::endl;
+        std::cout << "Can only be letters" << std::endl;
     }
     fake.append_first_name(answer, false);
 
@@ -26,7 +26,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty() && !valid_string(answer))
             break;
-        std::cout << "Can only be letters BROOOOOO" << std::endl;
+        std::cout << "Can only be letters" << std::endl;
     }
     fake.append_last_name(answer, false);
 
@@ -38,7 +38,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty() && !valid_string(answer))
             break;
-        std::cout << "Can only be letters BROOOOOO" << std::endl;
+        std::cout << "Can only be letters" << std::endl;
     }
     fake.append_nickname(answer, false);
 
@@ -50,7 +50,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty() && !valid_numbers(answer))
             break;
-        std::cout << "Can only be numbers BROOOOOO" << std::endl;
+        std::cout << "Can only be numbers" << std::endl;
     }
     fake.append_phone_number(answer, false);
 
@@ -62,22 +62,16 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty() && !valid_string(answer))
             break;
-        std::cout << "Can only be letters BROOOOOO" << std::endl;
+        std::cout << "Can only be letters" << std::endl;
     }
     fake.append_darkest_secret(answer, false);
 
     if (count < 8)
         contacts[count++] = fake;
     else
-    {
-        int i;
-        for (i = 0; i < 7; i++)
-            contacts[i] = contacts[i + 1];
-        contacts[7] = fake;
-    }
+        contacts[0] = fake;
 
     std::cout << "\nContact was added to the registry" << std::endl;
-    exist = true;
     fake.print_contact();
     return true;
 }
