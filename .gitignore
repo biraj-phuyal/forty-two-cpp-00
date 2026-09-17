@@ -1,4 +1,7 @@
 .DS_Store
 obj/
 phonebook
+megaphone
 *.o
+en.subject.pdf
+eval.pdf

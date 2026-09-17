@@ -6,7 +6,6 @@ bool Phonebook::add(){
     Contact fake;
     std::string answer;
 
-    // <-------------------- First name -------------------------->
     while (true)
     {
         std::cout << "Enter first name: " << std::endl;
@@ -18,7 +17,6 @@ bool Phonebook::add(){
     }
     fake.append_first_name(answer, false);
 
-    // <-------------------- Last name ---------------------------->
     while (true)
     {
         std::cout << "Enter last name: " << std::endl;
@@ -30,7 +28,6 @@ bool Phonebook::add(){
     }
     fake.append_last_name(answer, false);
 
-    // <-------------------- Nick name ----------------------------->
     while (true)
     {
         std::cout << "Enter nickname: " << std::endl;
@@ -42,7 +39,6 @@ bool Phonebook::add(){
     }
     fake.append_nickname(answer, false);
 
-    // <-------------------- Phone number -------------------------->
     while (true)
     {
         std::cout << "Enter phone number: " << std::endl;
@@ -54,7 +50,6 @@ bool Phonebook::add(){
     }
     fake.append_phone_number(answer, false);
 
-    // <-------------------- Darkest secret ------------------------>
     while (true)
     {
         std::cout << "Enter darkest secret: " << std::endl;
@@ -66,14 +61,10 @@ bool Phonebook::add(){
     }
     fake.append_darkest_secret(answer, false);
 
+    contacts[oldest] = fake;
+    oldest = (oldest + 1) % 8;
     if (count < 8)
-        contacts[count++] = fake;
-    else
-    {
-        contacts[oldest] = fake;
-        oldest = (oldest + 1) % 8;
-    }
-
+        count++;
     std::cout << "\nContact was added to the registry" << std::endl;
     fake.print_contact();
     return true;
