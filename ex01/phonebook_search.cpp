@@ -1,4 +1,5 @@
 #include "phonebook.hpp"
+#include <cstdlib>
 
 int Phonebook::search(){
     std::string index;
@@ -32,21 +33,19 @@ int Phonebook::search(){
             std::cout << std::endl;
             selected = std::atoi(index.c_str());
             if (selected >= 0 && selected < count)
+            {
                 contacts[selected].print_contact();
+                return 2;
+            }
             else
             {
                 std::cout << "Invalid index" << std::endl;
                 std::cout << std::endl;
             }
-                
         }
         else
         {
-            std::cout << "Invalid index: enter 'exit' to leave search or use enter button for entering a index again: ";
-            if (!std::getline(std::cin, index))
-                break;
-            if (!index.compare("exit") || !index.compare("EXIT"))
-                return 2;
+            std::cout << "Invalid index" << std::endl;
         }
     }
     std::cout << std::endl;

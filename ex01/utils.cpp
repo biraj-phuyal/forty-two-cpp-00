@@ -1,4 +1,5 @@
 #include "phonebook.hpp"
+#include <cctype>
 
 bool    valid_numbers(std::string number)
 {
@@ -49,6 +50,5 @@ void    print_for_search(std::string value)
 
 void invalid_command()
 {
-    std::cout << "\nThat's a wrong command \n\nEnter to continue...";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "\nThat's a wrong command" << std::endl;
 }

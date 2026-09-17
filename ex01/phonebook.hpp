@@ -9,6 +9,7 @@ class Phonebook {
     private:
         Contact contacts[8];
         int count;
+        int oldest;
     public:
         Phonebook();
         bool add();

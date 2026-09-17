@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() : count(0) {}
+Phonebook::Phonebook() : count(0), oldest(0) {}
 
 bool Phonebook::add(){
     Contact fake;
@@ -12,9 +12,9 @@ bool Phonebook::add(){
         std::cout << "Enter first name: " << std::endl;
         if (!std::getline(std::cin, answer))
             return false;
-        if (!answer.empty() && !valid_string(answer))
+        if (!answer.empty())
             break;
-        std::cout << "Can only be letters" << std::endl;
+        std::cout << "This is mandatory, it cannot be empty" << std::endl;
     }
     fake.append_first_name(answer, false);
 
@@ -24,9 +24,9 @@ bool Phonebook::add(){
         std::cout << "Enter last name: " << std::endl;
         if (!std::getline(std::cin, answer))
             return false;
-        if (!answer.empty() && !valid_string(answer))
+        if (!answer.empty())
             break;
-        std::cout << "Can only be letters" << std::endl;
+        std::cout << "This is mandatory, it cannot be empty" << std::endl;
     }
     fake.append_last_name(answer, false);
 
@@ -36,9 +36,9 @@ bool Phonebook::add(){
         std::cout << "Enter nickname: " << std::endl;
         if (!std::getline(std::cin, answer))
             return false;
-        if (!answer.empty() && !valid_string(answer))
+        if (!answer.empty())
             break;
-        std::cout << "Can only be letters" << std::endl;
+        std::cout << "This is mandatory, it cannot be empty" << std::endl;
     }
     fake.append_nickname(answer, false);
 
@@ -48,9 +48,9 @@ bool Phonebook::add(){
         std::cout << "Enter phone number: " << std::endl;
         if (!std::getline(std::cin, answer))
             return false;
-        if (!answer.empty() && !valid_numbers(answer))
+        if (!answer.empty())
             break;
-        std::cout << "Can only be numbers" << std::endl;
+        std::cout << "This is mandatory, it cannot be empty" << std::endl;
     }
     fake.append_phone_number(answer, false);
 
@@ -60,16 +60,19 @@ bool Phonebook::add(){
         std::cout << "Enter darkest secret: " << std::endl;
         if (!std::getline(std::cin, answer))
             return false;
-        if (!answer.empty() && !valid_string(answer))
+        if (!answer.empty())
             break;
-        std::cout << "Can only be letters" << std::endl;
+        std::cout << "This is mandatory, it cannot be empty" << std::endl;
     }
     fake.append_darkest_secret(answer, false);
 
     if (count < 8)
         contacts[count++] = fake;
     else
-        contacts[0] = fake;
+    {
+        contacts[oldest] = fake;
+        oldest = (oldest + 1) % 8;
+    }
 
     std::cout << "\nContact was added to the registry" << std::endl;
     fake.print_contact();
