@@ -12,7 +12,7 @@ int main(int args, char *argv[])
         for (i = 1; argv[i]; i++)
         {
             for (j = 0; argv[i][j]; j++)
-                std::cout << (char)std::toupper(argv[i][j]);
+                std::cout << static_cast<char>(std::toupper(static_cast<unsigned char>(argv[i][j])));
             if (argv[i + 1] != NULL)
                 std::cout << ' ';
         }

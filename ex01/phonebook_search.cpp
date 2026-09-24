@@ -28,25 +28,16 @@ int Phonebook::search(){
             break;
         if (!index.compare("exit") || !index.compare("EXIT"))
             return 2;
-        else if (!index.empty() && (index.find_first_not_of("0123456789") == std::string::npos))
+        else if (index.length() == 1 && index[0] >= '0' && index[0] <= '7')
         {
-            std::cout << std::endl;
-            selected = std::atoi(index.c_str());
-            if (selected >= 0 && selected < count)
-            {
+            selected = index[0] - '0';
+            if (selected < count)
                 contacts[selected].print_contact();
-                return 2;
-            }
             else
-            {
                 std::cout << "Invalid index" << std::endl;
-                std::cout << std::endl;
-            }
         }
         else
-        {
             std::cout << "Invalid index" << std::endl;
-        }
     }
     std::cout << std::endl;
     return (0);
