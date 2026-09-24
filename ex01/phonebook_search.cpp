@@ -32,7 +32,11 @@ int Phonebook::search(){
         {
             selected = index[0] - '0';
             if (selected < count)
+            {
+                std::cout << std::endl;
                 contacts[selected].print_contact();
+                return 2;
+            }
             else
                 std::cout << "Invalid index" << std::endl;
         }
