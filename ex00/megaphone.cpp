@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 
 int main(int args, char *argv[]) 
 {
@@ -13,9 +14,8 @@ int main(int args, char *argv[])
         {
             for (j = 0; argv[i][j]; j++)
                 std::cout << static_cast<char>(std::toupper(static_cast<unsigned char>(argv[i][j])));
-            if (argv[i + 1] != NULL)
-                std::cout << ' ';
         }
         std::cout << std::endl;
     }
+    return 0;
 }
