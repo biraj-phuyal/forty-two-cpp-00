@@ -1,7 +1,6 @@
 #include "phonebook.hpp"
-#include <cstdlib>
 
-int Phonebook::search(){
+int PhoneBook::search(){
     std::string index;
     int selected;
 
@@ -16,17 +15,18 @@ int Phonebook::search(){
         int i;
         for(i = 0; i < count; i++)
         {
-            std::cout.width(10);
-            std::cout << i << "|";
+            std::cout << std::setw(10) << i << "|";
             print_for_search(contacts[i].append_first_name("", true));
             print_for_search(contacts[i].append_last_name("", true));
             print_for_search(contacts[i].append_nickname("", true));
             std::cout << std::endl;
         }
-        std::cout << "'exit' to leave the search or to show a contact enter their index: ";
+        std::cout << "'exit' to leave the search or to show a contact enter their index: " << std::endl;
         if (!std::getline(std::cin, index))
             break;
-        if (!index.compare("exit") || !index.compare("EXIT"))
+        if (!index.compare("EXIT"))
+            return 0;
+        if (!index.compare("exit"))
             return 2;
         else if (index.length() == 1 && index[0] >= '0' && index[0] <= '7')
         {

@@ -3,22 +3,21 @@
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 #include "contact.hpp"
 
-class Phonebook {
+class PhoneBook {
     private:
         Contact contacts[8];
         int count;
         int oldest;
     public:
-        Phonebook();
+        PhoneBook();
         bool add();
         int search();
 };
 
-bool valid_numbers(std::string phone_number);
-bool valid_string(std::string str);
-void invalid_command();
 void print_for_search(std::string value);
+void invalid_command();
 
 #endif

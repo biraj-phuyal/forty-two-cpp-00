@@ -1,8 +1,8 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() : count(0), oldest(0) {}
+PhoneBook::PhoneBook() : count(0), oldest(0) {}
 
-bool Phonebook::add(){
+bool PhoneBook::add(){
     Contact fake;
     std::string answer;
 
@@ -13,7 +13,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty())
             break;
-        std::cout << "This is mandatory, it cannot be empty" << std::endl;
+        std::cout << "Enter nonempty text using printable characters" << std::endl;
     }
     fake.append_first_name(answer, false);
 
@@ -24,7 +24,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty())
             break;
-        std::cout << "This is mandatory, it cannot be empty" << std::endl;
+        std::cout << "Enter nonempty text using printable characters" << std::endl;
     }
     fake.append_last_name(answer, false);
 
@@ -35,7 +35,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty())
             break;
-        std::cout << "This is mandatory, it cannot be empty" << std::endl;
+        std::cout << "Enter nonempty text using printable characters" << std::endl;
     }
     fake.append_nickname(answer, false);
 
@@ -46,7 +46,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty())
             break;
-        std::cout << "This is mandatory, it cannot be empty" << std::endl;
+        std::cout << "Enter nonempty text using printable characters" << std::endl;
     }
     fake.append_phone_number(answer, false);
 
@@ -57,7 +57,7 @@ bool Phonebook::add(){
             return false;
         if (!answer.empty())
             break;
-        std::cout << "This is mandatory, it cannot be empty" << std::endl;
+        std::cout << "Enter nonempty text using printable characters" << std::endl;
     }
     fake.append_darkest_secret(answer, false);
 

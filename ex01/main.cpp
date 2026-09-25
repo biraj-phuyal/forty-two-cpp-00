@@ -2,7 +2,7 @@
 
 int main()
 {
-    Phonebook phonebook;
+    PhoneBook phonebook;
     std::string command;
 
     while (1)
